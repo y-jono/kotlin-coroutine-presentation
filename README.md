@@ -3,9 +3,9 @@
 このリポジトリは Sapporo.apk #4 で Kotlin Coroutine についてプレゼンするため
 kotlin Coroutineの動作を理解するために用意したツールセットです。
 
-'''
+```
 make
-'''
+```
 
 を実行すると、 kts -> class -> java の流れで kotlin のコードが java へ翻訳されます。
 
@@ -51,15 +51,19 @@ settings.jsonを用意しておきます。
 
 ## kotlinコンパイル
 
+```
 kotlinc launch.kts -include-runtime -cp lib/kotlinx-coroutines-core-1.2.0.jar
+```
 
 Working with the Command Line Compiler
 https://kotlinlang.org/docs/tutorials/command-line.html
 
 ## JVMアセンブリ出力
 
+``
 javap -c Launch.class > Launch.as
 javap -c Launch$1.class > Launch$1.as
+```
 
 javap コマンド
 https://docs.oracle.com/javase/jp/7/technotes/tools/windows/javap.html
@@ -69,8 +73,10 @@ https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings
 
 ## javaデコンパイル
 
+```
 java -jar decompiler/cfr-0.143.jar Launch.class --extraclasspath .\lib > Launch.java
 java -jar decompiler/cfr-0.143.jar Launch$1.class --extraclasspath .\lib > Launch$1.java
+```
 
 デコンパイルツール
 https://www.benf.org/other/cfr/
