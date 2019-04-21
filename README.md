@@ -60,7 +60,7 @@ https://kotlinlang.org/docs/tutorials/command-line.html
 
 ## JVMアセンブリ出力
 
-``
+```
 javap -c Launch.class > Launch.as
 javap -c Launch$1.class > Launch$1.as
 ```
